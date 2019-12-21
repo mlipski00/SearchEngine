@@ -1,4 +1,4 @@
-public class Result {
+class Result {
 
   private int documentNumber;
   private double tfidf;
