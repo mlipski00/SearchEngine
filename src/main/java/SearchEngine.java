@@ -2,6 +2,7 @@ import opennlp.tools.tokenize.WhitespaceTokenizer;
 import opennlp.tools.util.StringUtil;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +31,7 @@ class SearchEngine {
         addTokenToInvertedIndex(counter, lineTokenized);
         listOfAllDocuments.add(Arrays.asList(lineTokenized));
       });
-    } catch (IOException exception) {
+    } catch (IOException | InvalidPathException exception) {
       System.err.println(FAILED_MESSAGE);
       return false;
     }
